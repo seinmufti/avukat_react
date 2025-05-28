@@ -5,10 +5,9 @@ import AboutUs from './components/AboutUs'
 import Services from './components/Services'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import './App.css'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

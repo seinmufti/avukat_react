@@ -5,14 +5,14 @@ const AboutUs = ( id ) => {
     <Box
       component="section"
       sx={{
-        py: 8,
         px: 4,
+        pb: 4,
         maxWidth: 800,
         mx: 'auto',
         textAlign: 'center',
       }}
     >
-      <Typography level="h2" sx={{ mb: 2 }}>
+      <Typography level="h2" sx={{ mb: 2 , pb: 2}}>
         About Us
       </Typography>
       <Typography level="body-md" sx={{ color: 'text.secondary' }}>
