@@ -15,22 +15,24 @@ html, body {
 body {
     margin: 0;
     padding: 0;
-    color: #F8F9FA;
+    background-color: var(--joy-palette-neutral-50);
+    color: var(--joy-palette-neutral-900);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1.5rem;
+    color: var(--joy-palette-neutral-800);
 }
 
 p, span, a, button {
-  font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 section {
-  padding: 5rem 0;
+    padding: 5rem 0;
 }
 
 .copper-accent {
-  color: #B66340;
+    color: var(--joy-palette-primary-400);
 }

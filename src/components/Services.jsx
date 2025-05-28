@@ -15,7 +15,7 @@ const Services = () => {
   return (
     <Box component="section" sx={{
       px: 4,
-      pb: 4,}}>
+      pb: 3,}}>
       <Typography level="h2" sx={{
         textAlign: 'center',
         mb: 2,

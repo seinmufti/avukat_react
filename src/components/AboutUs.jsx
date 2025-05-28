@@ -6,7 +6,7 @@ const AboutUs = ( id ) => {
       component="section"
       sx={{
         px: 4,
-        pb: 4,
+        pb: 3,
         maxWidth: 800,
         mx: 'auto',
         textAlign: 'center',

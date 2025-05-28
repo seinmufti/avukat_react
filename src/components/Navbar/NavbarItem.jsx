@@ -3,7 +3,12 @@ import { Button } from '@mui/joy';
 
 const NavbarItem = ( {item} ) => {
     return (
-        <Button variant="plain">{item.name}</Button>
+        <Button 
+            variant="plain" 
+            sx={{ color: 'white' }}
+        >
+            {item.name}
+        </Button>
     )
 }
 

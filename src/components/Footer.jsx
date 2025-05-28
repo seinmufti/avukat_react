@@ -9,7 +9,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: 'background.level1',
+        bgcolor: 'neutral.900', // Changed from background.level1 to neutral.900
         py: 4,
         px: 3,
         textAlign: 'center',

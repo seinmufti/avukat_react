@@ -14,7 +14,7 @@ const Navbar = () => {
             component="nav"
             sx={{
                 width: '100%',
-                bgcolor: 'neutral.softBg',
+                bgcolor: 'neutral.900', // Changed from neutral.softBg to neutral.900
                 borderBottom: '1px solid',
                 borderColor: 'divider',
                 position: 'relative',
@@ -49,7 +49,7 @@ const Navbar = () => {
                     top: '100%',
                     left: 0,
                     width: '100%',
-                    bgcolor: 'neutral.softBg',
+                    bgcolor: 'neutral.900', // Changed from neutral.softBg to neutral.900
                     borderTop: '1px solid',
                     borderColor: 'divider',
                     zIndex: 1000,
