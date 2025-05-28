@@ -7,7 +7,7 @@ const NavbarItem = ( {item} ) => {
             variant="plain" 
             sx={{ color: 'white' }}
         >
-            {item.name}
+            {item}
         </Button>
     )
 }

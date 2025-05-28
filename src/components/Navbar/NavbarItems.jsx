@@ -2,14 +2,10 @@ import { Box } from '@mui/joy';
 import NavbarItem from './NavbarItem';
 
 const navbarItems = [
-    {
-        "name": "Home",
-        "id": 1,
-    },
-    {
-        "name": "Contact",
-        "id": 2,
-    },
+"Home",
+"About Us",
+"Services",
+"Contact",
 ]
 
 const NavbarItems = ({ orientation = 'horizontal' }) => {
@@ -26,7 +22,7 @@ const NavbarItems = ({ orientation = 'horizontal' }) => {
             }
         }}>
             {navbarItems.map(item => (
-                <NavbarItem key={item.id} item={item} />
+                <NavbarItem key={item} item={item} />
             ))}
         </Box>
     )
