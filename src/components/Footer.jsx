@@ -9,24 +9,39 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: 'neutral.900', // Changed from background.level1 to neutral.900
-        py: 4,
-        px: 3,
+        bgcolor: 'neutral.900',
+        py: 6,
+        px: { xs: 2, md: 4 },
         textAlign: 'center',
         borderTop: '1px solid',
-        borderColor: 'divider',
+        borderColor: 'neutral.800',
       }}
     >
-      <Box sx={{ mb: 2 }}>
+      <Box
+        sx={{
+          maxWidth: 1200,
+          mx: 'auto',
+          mb: 4,
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 2,
+        }}
+      >
         <IconButton
           component="a"
           href="https://facebook.com"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
-          color="neutral"
+          variant="plain"
           size="md"
-          sx={{ mx: 1 }}
+          sx={{
+            color: 'white',
+            '&:hover': {
+              color: 'primary.400',
+              bgcolor: 'transparent',
+            },
+          }}
         >
           <FacebookIcon />
         </IconButton>
@@ -36,9 +51,15 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
-          color="neutral"
+          variant="plain"
           size="md"
-          sx={{ mx: 1 }}
+          sx={{
+            color: 'white',
+            '&:hover': {
+              color: 'primary.400',
+              bgcolor: 'transparent',
+            },
+          }}
         >
           <TwitterIcon />
         </IconButton>
@@ -48,9 +69,15 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-          color="neutral"
+          variant="plain"
           size="md"
-          sx={{ mx: 1 }}
+          sx={{
+            color: 'white',
+            '&:hover': {
+              color: 'primary.400',
+              bgcolor: 'transparent',
+            },
+          }}
         >
           <InstagramIcon />
         </IconButton>
@@ -60,14 +87,26 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          color="neutral"
+          variant="plain"
           size="md"
-          sx={{ mx: 1 }}
+          sx={{
+            color: 'white',
+            '&:hover': {
+              color: 'primary.400',
+              bgcolor: 'transparent',
+            },
+          }}
         >
           <LinkedInIcon />
         </IconButton>
       </Box>
-      <Typography level="body3" sx={{ color: 'text.secondary' }}>
+      <Typography
+        level="body2"
+        sx={{
+          color: 'neutral.400',
+          fontWeight: 'md',
+        }}
+      >
         &copy; {new Date().getFullYear()} Your Company. All rights reserved.
       </Typography>
     </Box>

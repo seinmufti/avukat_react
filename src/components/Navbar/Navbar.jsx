@@ -1,9 +1,9 @@
-import { Box, Button, Typography, IconButton } from '@mui/joy';
+import { Box, IconButton } from '@mui/joy';
 import Menu from '@mui/icons-material/Menu';
 import Close from '@mui/icons-material/Close';
 import { useState } from 'react';
-import logo from '../../assets/logo2.png'
-import NavbarItems from './NavbarItems';
+import NavbarButtons from './NavbarButtons';
+import logo from '../../assets/logo2.png'; // Adjust the path as necessary
 
 
 const Navbar = () => {
@@ -14,28 +14,51 @@ const Navbar = () => {
             component="nav"
             sx={{
                 width: '100%',
-                bgcolor: 'neutral.900', // Changed from neutral.softBg to neutral.900
+                bgcolor: 'neutral.900',
                 borderBottom: '1px solid',
-                borderColor: 'divider',
-                position: 'relative',
+                borderColor: 'neutral.800',
+                position: 'fixed',
+                top: 0,
+                zIndex: 1100,
+                boxShadow: 'md',
             }}
         >
             <Box sx={{
+                maxWidth: 1200,
+                mx: 'auto',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                px: 2,
+                px: { xs: 2, md: 4 },
                 py: 2,
+                position: 'relative',
             }}>
-                <img src={logo} alt="Logo" style={{ height: '40px', width: 'auto', maxWidth: '100%' }} />
+                <Box sx={{ marginRight: 'auto' }}>
+                    <img 
+                        src={logo} 
+                        alt="Logo" 
+                        style={{ 
+                            height: '40px', 
+                            width: 'auto', 
+                            maxWidth: '100%' 
+                        }} 
+                    />
+                </Box>
                 
-                <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-                    <NavbarItems />
+                <Box sx={{ 
+                    display: { xs: 'none', md: 'block' },
+                    position: 'absolute',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                }}>
+                    <NavbarButtons />
                 </Box>
 
                 <IconButton
                     onClick={() => setMobileOpen(!mobileOpen)}
-                    sx={{ display: { xs: 'block', md: 'none' } }}
+                    sx={{ 
+                        display: { xs: 'block', md: 'none' },
+                    }}
                 >
                     {mobileOpen ? <Close /> : <Menu />}
                 </IconButton>
@@ -49,18 +72,15 @@ const Navbar = () => {
                     top: '100%',
                     left: 0,
                     width: '100%',
-                    bgcolor: 'neutral.900', // Changed from neutral.softBg to neutral.900
+                    bgcolor: 'neutral.900',
                     borderTop: '1px solid',
-                    borderColor: 'divider',
+                    borderColor: 'neutral.800',
                     zIndex: 1000,
-                    boxShadow: 'md',
-                    '& > *': {
-                        opacity: mobileOpen ? 1 : 0,
-                    }
+                    boxShadow: 'lg',
                 }}
             >
                 <Box sx={{ py: 2 }}>
-                    <NavbarItems orientation="vertical" />
+                    <NavbarButtons orientation="vertical" />
                 </Box>
             </Box>
         </Box>

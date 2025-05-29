@@ -6,6 +6,7 @@ const Hero = () => {
      <Box
       sx={{
         minHeight: '65vh',
+        marginTop: '64px', // Add this to account for fixed navbar
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
