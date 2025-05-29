@@ -2,11 +2,15 @@ import { Box, IconButton } from '@mui/joy';
 import Menu from '@mui/icons-material/Menu';
 import Close from '@mui/icons-material/Close';
 import { useState } from 'react';
-import NavbarButtons from './NavbarButtons';
-import logo from '../../assets/logo2.png'; // Adjust the path as necessary
+import NavbarItems from './NavbarItems';
+import logo from '../../assets/logo2.png';
+import Languages from './languages/Languages';
+import { useMediaQuery } from '@mui/material';
+
 
 
 const Navbar = () => {
+    const isMobile = useMediaQuery('(max-width:900px)');
     const [mobileOpen, setMobileOpen] = useState(false);
 
     return (
@@ -34,29 +38,33 @@ const Navbar = () => {
                 position: 'relative',
             }}>
                 <Box sx={{ marginRight: 'auto' }}>
-                    <img 
-                        src={logo} 
-                        alt="Logo" 
-                        style={{ 
-                            height: '40px', 
-                            width: 'auto', 
-                            maxWidth: '100%' 
-                        }} 
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        style={{
+                            height: '40px',
+                            width: 'auto',
+                            maxWidth: '100%'
+                        }}
                     />
                 </Box>
-                
-                <Box sx={{ 
+
+                <Box sx={{
                     display: { xs: 'none', md: 'block' },
                     position: 'absolute',
                     left: '50%',
                     transform: 'translateX(-50%)',
                 }}>
-                    <NavbarButtons />
+                    <NavbarItems />
                 </Box>
+
+                {/* Languages */}
+                {!isMobile && <Languages />}
+
 
                 <IconButton
                     onClick={() => setMobileOpen(!mobileOpen)}
-                    sx={{ 
+                    sx={{
                         display: { xs: 'block', md: 'none' },
                     }}
                 >
@@ -80,7 +88,10 @@ const Navbar = () => {
                 }}
             >
                 <Box sx={{ py: 2 }}>
-                    <NavbarButtons orientation="vertical" />
+                    <NavbarItems orientation="vertical" />
+                    <Box sx={{ display: 'flex', justifyContent: 'center', flex: 1 , pt:3}}>
+                        <Languages />
+                    </Box>
                 </Box>
             </Box>
         </Box>

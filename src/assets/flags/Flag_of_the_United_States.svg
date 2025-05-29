@@ -7,19 +7,19 @@
 <g id="s9">
 <g id="s5">
 <g id="s4">
-<path id="s" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/>
+<path id="s" d="M247,90 297.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/>
 <use xlink:href="#s" y="420"/>
 <use xlink:href="#s" y="840"/>
 <use xlink:href="#s" y="1260"/>
 </g>
 <use xlink:href="#s" y="1680"/>
 </g>
-<use xlink:href="#s4" x="247" y="210"/>
+<use xlink:href="#s4" x="297" y="210"/>
 </g>
-<use xlink:href="#s9" x="494"/>
+<use xlink:href="#s9" x="594"/>
 </g>
-<use xlink:href="#s18" x="988"/>
-<use xlink:href="#s9" x="1976"/>
-<use xlink:href="#s5" x="2470"/>
+<use xlink:href="#s18" x="1188"/>
+<use xlink:href="#s9" x="2376"/>
+<use xlink:href="#s5" x="2970"/>
 </g>
 </svg>
