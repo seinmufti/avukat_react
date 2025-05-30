@@ -2,12 +2,11 @@ import { Box } from '@mui/joy';
 import { useLang } from '../../../LangContext';
 
 
-const Language = ({ language, closeMenu }) => {
+const Language = ({ language }) => {
     const { setLang } = useLang();
 
     const handleClick = () => {
         setLang(language.code);
-        if (closeMenu) closeMenu();
     };
 
     return (

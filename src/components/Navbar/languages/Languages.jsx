@@ -5,7 +5,7 @@ import flagAr from '../../../assets/flags/Flag_of_Iraq.svg';
 import flagKr from '../../../assets/flags/Flag_of_Kurdistan.svg';
 
 
-const Languages = ({closeMenu}) => {
+const Languages = () => {
     const languages = [
     {
         flag: flagEn,
@@ -29,7 +29,7 @@ const Languages = ({closeMenu}) => {
         }}>
 
             {languages.map(language => (
-                <Language key={language.code} language={language} closeMenu ={closeMenu}/>
+                <Language key={language.code} language={language}/>
             ))}
         </Box>
     )
