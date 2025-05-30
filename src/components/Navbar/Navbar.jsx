@@ -50,8 +50,7 @@ const Navbar = () => {
                     />
                 </Box>
 
-                <Box 
-                sx={{
+                <Box sx={{
                     display: { xs: 'none', md: 'block' },
                     position: 'absolute',
                     left: '50%',
@@ -75,9 +74,13 @@ const Navbar = () => {
             </Box>
 
             {/* Mobile menu */}
+            {/* Mobile menu with animation */}
             <Box
                 sx={{
-                    display: { xs: mobileOpen ? 'block' : 'none', md: 'none' },
+                    overflow: 'hidden',
+                    maxHeight: mobileOpen ? '500px' : '0', // adjust maxHeight to your menu height
+                    opacity: mobileOpen ? 1 : 0,
+                    transition: 'max-height 0.3s ease, opacity 0.3s ease',
                     position: 'absolute',
                     top: '100%',
                     left: 0,
@@ -92,7 +95,8 @@ const Navbar = () => {
                 <Box sx={{ py: 2 }}>
                     <NavbarItems orientation="vertical" />
                     <Box sx={{ display: 'flex', justifyContent: 'center', flex: 1, pt: 3 }}>
-                        <Languages />
+                        {/* If language is clicked, close the burger menu */}
+                        <Languages closeMenu={isMobile ? () => setMobileOpen(false) : undefined} />
                     </Box>
                 </Box>
             </Box>

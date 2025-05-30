@@ -2,16 +2,17 @@ import { Box } from '@mui/joy';
 import { useLang } from '../../../LangContext';
 
 
-const Language = ({ language }) => {
+const Language = ({ language, closeMenu }) => {
     const { setLang } = useLang();
 
     const handleClick = () => {
         setLang(language.code);
+        if (closeMenu) closeMenu();
     };
 
     return (
         <Box
-            onClick={handleClick}   
+            onClick={handleClick}
             sx={{
                 cursor: 'pointer',
                 '&:hover': {
