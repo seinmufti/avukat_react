@@ -12,7 +12,7 @@ const AboutUs = () => {
       id='about'
       sx={{
         px: 4,
-        py: 10,
+        py: 8,
         bgcolor: 'neutral.50',
         position: 'relative',
       }}

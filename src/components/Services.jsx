@@ -14,7 +14,7 @@ const Services = () => {
     id='services'
     sx={{
       px: 4,
-      py: 10,
+      py: 6,
       bgcolor: 'neutral.100',
       position: 'relative',
     }}>

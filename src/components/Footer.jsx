@@ -107,7 +107,7 @@ const Footer = () => {
           fontWeight: 'md',
         }}
       >
-        &copy; {new Date().getFullYear()} Nordlys. All rights reserved.
+        &copy; {new Date().getFullYear()} MSQadir. All rights reserved.
       </Typography>
     </Box>
   );

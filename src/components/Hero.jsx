@@ -10,7 +10,9 @@ const Hero = () => {
   const handleClick = () => {
     const element = document.getElementById(translations.sections.contact.id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+        const yOffset = -64; // adjust this to match your navbar height
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 

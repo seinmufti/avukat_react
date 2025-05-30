@@ -12,7 +12,7 @@ const Contact = () => {
     id='contact'
     sx={{
       px: 4,
-      py: 10,
+      py: 5,
       bgcolor: 'neutral.50',
       position: 'relative',
     }}>
@@ -84,6 +84,10 @@ const Contact = () => {
           minRows={4}
           required
           size="lg"
+          sx={{
+            minHeight: { xs: '200px', sm: '140px', md: '150px' },
+          }}
+          
         />
         <Button
           type="submit"

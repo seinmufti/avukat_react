@@ -2,16 +2,20 @@ import { Box } from '@mui/joy';
 import NavbarItem from './NavbarItem';
 import translations from '../../translations';
 import { useLang } from '../../LangContext';
+import { useMediaQuery } from '@mui/material';
 
 
 const NavbarButtons = ({ orientation = 'horizontal' }) => {
     const { lang } = useLang();
+    const isMobile = useMediaQuery('(max-width:900px)');
 
-    const reversed = Object.fromEntries(
-        Object.entries(translations.sections).reverse()
+    let presentTranslations = translations.sections;
+    const reversedTranslations = Object.fromEntries(
+        Object.entries(presentTranslations).reverse()
     );
 
-    const presentTranslations = lang === "en" ? translations.sections : reversed
+    // Only display in reverse if not english, and is not mobile.
+    presentTranslations = lang !== "en" && !isMobile ? reversedTranslations : presentTranslations;
 
 
     return (

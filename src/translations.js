@@ -20,13 +20,13 @@ const translations = {
         },
         fullName: {
           en: "Muhammad S. Qader",
-          ar: "محمد سعد الله",
-          kr: "مەحەممەد س. قادر",
+          ar: "محمد سعدالله",
+          kr: "محمد سعدالله",
         },
         motto: {
           en: "The law is our weapon, and your right is our mission.",
           ar: ".الـــقـانـون ســلاحـنا، وحــقـك غــايـتـنا",
-          kr: "یاسا چەکی ئێمەیە، و مافەکەت ئامانجی ئێمەیە",
+          kr: "یاسا چەکی ئێمەیە، مافەکەت ئامانجی ئێمەیە",
         },
         scheduleButton: {
           en: "Schedule Consultation",
@@ -52,7 +52,7 @@ const translations = {
       id: "services",
       en: "Practice Areas",
       ar: "مجالات الممارسة",
-      kr: "بواری کار",
+      kr: "بوارەکانی کار",
       services: [
         {
           en: "Corporate Law",
@@ -63,7 +63,7 @@ const translations = {
         {
           en: "Civil Litigation",
           ar: "التقاضي المدني",
-          kr: "بڕیاری دادگای مەدەنی",
+          kr: "بڕیاری دادگای شارستانی",
           icon: AccountBalanceIcon,
         },
         {
