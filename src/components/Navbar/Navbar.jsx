@@ -43,6 +43,16 @@ const Navbar = () => {
         top: 0,
         zIndex: 1100,
         boxShadow: 'md',
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '2px',
+          background: 'linear-gradient(90deg, var(--joy-palette-primary-400) 0%, var(--joy-palette-primary-600) 100%)',
+          opacity: 0.8,
+        }
       }}
     >
       <Box
@@ -110,6 +120,16 @@ const Navbar = () => {
           borderColor: 'neutral.800',
           zIndex: 1000,
           boxShadow: 'lg',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '2px',
+            background: 'linear-gradient(90deg, var(--joy-palette-primary-400) 0%, var(--joy-palette-primary-600) 100%)',
+            opacity: 0.8,
+          }
         }}
       >
         <Box sx={{ py: 2 }}>

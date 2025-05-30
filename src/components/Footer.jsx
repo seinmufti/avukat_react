@@ -1,4 +1,4 @@
-import { Box, Link, Typography, IconButton } from '@mui/joy';
+import { Box, IconButton, Typography } from '@mui/joy';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -10,105 +10,134 @@ const Footer = () => {
       component="footer"
       sx={{
         bgcolor: 'neutral.900',
-        py: 6,
-        px: { xs: 2, md: 4 },
-        textAlign: 'center',
-        borderTop: '1px solid',
-        borderColor: 'neutral.800',
+        color: 'neutral.100',
+        position: 'relative',
+        py: 4,
+        height: '120px',
+        minHeight: '120px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '80%',
+          maxWidth: '1200px',
+          height: '2px',
+          background: 'linear-gradient(90deg, transparent 0%, var(--joy-palette-primary-400) 50%, transparent 100%)',
+          opacity: 0.8,
+        }
       }}
     >
+      {/* Social Media Icons */}
       <Box
         sx={{
-          maxWidth: 1200,
-          mx: 'auto',
-          mb: 4,
           display: 'flex',
           justifyContent: 'center',
-          gap: 2,
+          gap: { xs: 3, md: 4 },
+          mb: 2,
+          height: '40px',
         }}
       >
         <IconButton
           component="a"
           href="https://facebook.com"
           target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
           variant="plain"
-          size="md"
+          size="lg"
           sx={{
-            color: 'white',
+            color: 'primary.300',
+            transition: 'all 0.3s ease',
             '&:hover': {
               color: 'primary.400',
+              transform: 'translateY(-3px)',
               bgcolor: 'transparent',
             },
           }}
         >
-          <FacebookIcon />
+          <FacebookIcon sx={{ fontSize: '1.75rem' }} />
         </IconButton>
         <IconButton
           component="a"
           href="https://twitter.com"
           target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
           variant="plain"
-          size="md"
+          size="lg"
           sx={{
-            color: 'white',
+            color: 'primary.300',
+            transition: 'all 0.3s ease',
             '&:hover': {
               color: 'primary.400',
+              transform: 'translateY(-3px)',
               bgcolor: 'transparent',
             },
           }}
         >
-          <TwitterIcon />
+          <TwitterIcon sx={{ fontSize: '1.75rem' }} />
         </IconButton>
         <IconButton
           component="a"
           href="https://instagram.com"
           target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
           variant="plain"
-          size="md"
+          size="lg"
           sx={{
-            color: 'white',
+            color: 'primary.300',
+            transition: 'all 0.3s ease',
             '&:hover': {
               color: 'primary.400',
+              transform: 'translateY(-3px)',
               bgcolor: 'transparent',
             },
           }}
         >
-          <InstagramIcon />
+          <InstagramIcon sx={{ fontSize: '1.75rem' }} />
         </IconButton>
         <IconButton
           component="a"
           href="https://linkedin.com"
           target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
           variant="plain"
-          size="md"
+          size="lg"
           sx={{
-            color: 'white',
+            color: 'primary.300',
+            transition: 'all 0.3s ease',
             '&:hover': {
               color: 'primary.400',
+              transform: 'translateY(-3px)',
               bgcolor: 'transparent',
             },
           }}
         >
-          <LinkedInIcon />
+          <LinkedInIcon sx={{ fontSize: '1.75rem' }} />
         </IconButton>
       </Box>
-      <Typography
-        level="body2"
+
+      {/* Copyright Text - Always in English */}
+      <Box
         sx={{
-          color: 'neutral.400',
-          fontWeight: 'md',
+          textAlign: 'center',
+          direction: 'ltr', // Force LTR direction for all languages
+          height: '24px',
         }}
       >
-        &copy; {new Date().getFullYear()} MSQadir. All rights reserved.
-      </Typography>
+        <Typography
+          level="body-md"
+          sx={{
+            color: 'neutral.400',
+            fontWeight: 300,
+            letterSpacing: '0.5px',
+            fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+            lineHeight: '24px',
+          }}
+        >
+          © {new Date().getFullYear()} MSQadir. All rights reserved.
+        </Typography>
+      </Box>
     </Box>
   );
 };

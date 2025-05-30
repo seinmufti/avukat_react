@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from '@mui/joy';
+import { Box, Typography, Button, Container } from '@mui/joy';
 import hero_cover from '../assets/hero_cover.jpg';
 import { useLang } from '../LangContext';
 import translations from '../translations';
@@ -10,9 +10,9 @@ const Hero = () => {
   const handleClick = () => {
     const element = document.getElementById(translations.sections.contact.id);
     if (element) {
-        const yOffset = -64; // adjust this to match your navbar height
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
+      const yOffset = -64;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
@@ -20,15 +20,9 @@ const Hero = () => {
     <Box
       id='home'
       sx={{
-        scrollMarginTop: '60px',
-        minHeight: '55vh',
-        marginTop: '64px',
+        minHeight: '100vh',
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
         alignItems: 'center',
-        textAlign: 'center',
-        px: 4,
         position: 'relative',
         '&::before': {
           content: '""',
@@ -37,31 +31,94 @@ const Hero = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          background: 'linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%)',
           zIndex: 1
         },
-        backgroundImage: `url(${hero_cover})`, // Add your image to public folder
+        backgroundImage: `url(${hero_cover})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
       }}
     >
-      <Box sx={{ position: 'relative', zIndex: 2 }}>
-        <Typography level="body-lg" sx={{ mb: 3, maxWidth: 600, color: 'white' }}>
+      <Container
+        maxWidth="lg"
+        sx={{
+          position: 'relative',
+          zIndex: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: { xs: 'center', md: lang === 'en' ? 'flex-start' : 'flex-end' },
+          textAlign: { xs: 'center', md: lang === 'en' ? 'left' : 'right' },
+          px: { xs: 2, sm: 4 },
+          minHeight: '400px',
+          justifyContent: 'center',
+        }}
+      >
+        <Typography
+          level="h4"
+          sx={{
+            color: 'primary.200',
+            mb: 1,
+            fontWeight: 500,
+            letterSpacing: '0.5px',
+            textTransform: 'uppercase',
+            fontSize: { xs: '1rem', md: '1.25rem' },
+          }}
+        >
           {presentTranslations.title[lang]}
         </Typography>
-        <Typography level="h1" sx={{ mb: 2, color: 'white' }}>
+
+        <Typography
+          level="h1"
+          sx={{
+            color: 'white',
+            fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
+            fontWeight: 700,
+            mb: 2,
+            lineHeight: 1.2,
+            maxWidth: '800px',
+          }}
+        >
           {presentTranslations.fullName[lang]}
         </Typography>
-        <Typography level="body-lg" sx={{ mb: 3, maxWidth: 600, color: 'white' }}>
+
+        <Typography
+          level="h3"
+          sx={{
+            color: 'neutral.200',
+            mb: 4,
+            maxWidth: '600px',
+            fontSize: { xs: '1.25rem', md: '1.5rem' },
+            fontWeight: 400,
+            fontFamily: 'body',
+          }}
+        >
           {presentTranslations.motto[lang]}
         </Typography>
-        <Button size="lg" variant="solid" color="primary" onClick={handleClick}>
+
+        <Button
+          size="lg"
+          onClick={handleClick}
+          sx={{
+            bgcolor: 'primary.400',
+            color: 'white',
+            px: 6,
+            py: 2,
+            fontSize: '1.125rem',
+            borderRadius: '2px',
+            '&:hover': {
+              bgcolor: 'primary.500',
+              transform: 'translateY(-2px)',
+            },
+            transition: 'all 0.3s ease',
+            boxShadow: 'md',
+          }}
+        >
           {presentTranslations.scheduleButton[lang]}
         </Button>
-      </Box>
+      </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

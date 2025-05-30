@@ -1,9 +1,9 @@
-import { Box, Typography } from '@mui/joy';
+import { Box, Typography, Container } from '@mui/joy';
 import translations from '../translations';
 import { useLang } from '../LangContext';
 
 const AboutUs = () => {
-  const presentTranslations = translations.sections.aboutUs
+  const presentTranslations = translations.sections.aboutUs;
   const { lang } = useLang();
 
   return (
@@ -11,24 +11,40 @@ const AboutUs = () => {
       component="section"
       id='about'
       sx={{
-        px: 4,
-        py: 8,
         bgcolor: 'neutral.50',
         position: 'relative',
+        minHeight: '500px',
+        height: '500px',
+        display: 'flex',
+        alignItems: 'center',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '1px',
+          background: 'linear-gradient(90deg, var(--joy-palette-primary-400) 0%, var(--joy-palette-primary-600) 100%)',
+          opacity: 0.3,
+        }
       }}
     >
-      <Box
+      <Container 
+        maxWidth="lg"
         sx={{
-          maxWidth: 800,
-          mx: 'auto',
-          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '300px',
+          height: '300px',
         }}
       >
-        {/* Title */}
         <Typography
           level="h2"
           sx={{
-            mb: 8,
+            textAlign: 'center',
+            mb: { xs: 6, md: 10 },
             fontSize: { xs: '2rem', md: '2.5rem' },
             fontWeight: 600,
             position: 'relative',
@@ -40,29 +56,33 @@ const AboutUs = () => {
               transform: 'translateX(-50%)',
               width: '60px',
               height: '3px',
-              bgcolor: 'primary.400',
+              background: 'linear-gradient(90deg, var(--joy-palette-primary-400) 0%, var(--joy-palette-primary-600) 100%)',
             }
           }}
         >
           {presentTranslations[lang]}
         </Typography>
 
-        {/* Description */}
         <Typography
           level="body-lg"
           sx={{
+            textAlign: 'center',
             color: 'neutral.700',
-            lineHeight: 1.8,
-            maxWidth: '900px',
+            maxWidth: '800px',
             mx: 'auto',
-            minHeight: { xs: '190px', sm: '140px', md: '100px' },
+            lineHeight: 1.8,
+            fontSize: { xs: '1.1rem', md: '1.25rem' },
+            minHeight: '100px',
+            height: '100px',
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
           {presentTranslations.contents.description[lang]}
         </Typography>
-      </Box>
+      </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default AboutUs
+export default AboutUs;
