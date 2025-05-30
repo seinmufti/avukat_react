@@ -20,11 +20,26 @@ const NavbarItem = ({ section }) => {
             sx={{
                 color: 'white',
                 fontWeight: 500,
+                position: 'relative',
+                '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: -2,
+                    left: '50%',
+                    width: 0,
+                    height: '2px',
+                    backgroundColor: 'primary.400',
+                    transition: 'all 0.3s ease-in-out',
+                    transform: 'translateX(-50%)',
+                },
                 '&:hover': {
                     color: 'primary.400',
-                    bgcolor: 'transparent'
+                    bgcolor: 'transparent',
+                    '&::after': {
+                        width: '100%',
+                    }
                 },
-                transition: 'color 0.2s ease-in-out'
+                transition: 'all 0.2s ease-in-out'
             }}
             onClick={handleClick}
         >

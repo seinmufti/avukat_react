@@ -16,23 +16,54 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--joy-palette-neutral-50);
-    color: var(--joy-palette-neutral-900);
+    color: var(--joy-palette-neutral-800);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 1.5rem;
-    color: var(--joy-palette-neutral-800);
+    color: var(--joy-palette-neutral-900);
+    letter-spacing: 0.5px;
 }
 
 p, span, a, button {
     font-family: 'Inter', sans-serif;
+    color: var(--joy-palette-neutral-800);
 }
 
 section {
     padding: 5rem 0;
 }
 
-.copper-accent {
+.gold-accent {
     color: var(--joy-palette-primary-400);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background-color: var(--joy-palette-primary-200);
+    color: var(--joy-palette-neutral-900);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--joy-palette-neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--joy-palette-primary-400);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--joy-palette-primary-500);
 }

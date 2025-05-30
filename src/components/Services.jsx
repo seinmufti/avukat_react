@@ -1,63 +1,94 @@
-import { Box, Typography } from '@mui/joy';
+import { Box, Typography, Container, Grid } from '@mui/joy';
 import Service from './Service';
 import translations from '../translations';
 import { useLang } from '../LangContext';
 
-
 const Services = () => {
-  const presentTranslations = translations.sections.services
+  const presentTranslations = translations.sections.services;
   const { lang } = useLang();
 
-
   return (
-    <Box component="section"
-    id='services'
-    sx={{
-      px: 4,
-      py: 6,
-      bgcolor: 'neutral.100',
-      position: 'relative',
-    }}>
-      <Typography level="h2"
+    <Box
+      component="section"
+      id='services'
       sx={{
-        textAlign: 'center',
-        mb: 8,
-        fontSize: { xs: '2rem', md: '2.5rem' },
-        fontWeight: 600,
+        pt: { xs: 6, md: 8 },
+        pb: { xs: 10, md: 12 },
+        bgcolor: 'neutral.100',
         position: 'relative',
-        '&::after': {
+        minHeight: '750px',
+        height: '750px',
+        display: 'flex',
+        alignItems: 'center',
+        '&::before': {
           content: '""',
           position: 'absolute',
-          bottom: '-16px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '60px',
-          height: '3px',
-          bgcolor: 'primary.400',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '1px',
+          background: 'linear-gradient(90deg, var(--joy-palette-primary-400) 0%, var(--joy-palette-primary-600) 100%)',
+          opacity: 0.3,
         }
-      }}>
-        {presentTranslations[lang]}
-      </Typography>
-      <Box
+      }}
+    >
+      <Container 
+        maxWidth="lg"
         sx={{
-          maxWidth: 1200,
-          mx: 'auto',
-          display: 'grid',
-          gridTemplateColumns: {
-            xs: 'repeat(2, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-          },
-          gap: 4,
-          px: { xs: 2, sm: 6 },
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '600px',
+          height: '600px',
+          py: 2,
         }}
       >
-        {presentTranslations.services.map(service => (
-          <Service key={service[lang]} name={service[lang]} icon={service.icon} />
-        ))}
-      </Box>
-    </Box>
-  )
-}
+        <Typography
+          level="h2"
+          sx={{
+            textAlign: 'center',
+            mb: { xs: 4, md: 6 },
+            fontSize: { xs: '2rem', md: '2.5rem' },
+            fontWeight: 600,
+            position: 'relative',
+            minHeight: '60px',
+            display: 'flex',
+            alignItems: 'center',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-16px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '60px',
+              height: '3px',
+              background: 'linear-gradient(90deg, var(--joy-palette-primary-400) 0%, var(--joy-palette-primary-600) 100%)',
+            }
+          }}
+        >
+          {presentTranslations[lang]}
+        </Typography>
 
-export default Services
+        <Grid
+          container
+          spacing={4}
+          sx={{
+            mt: 2,
+            minHeight: '450px',
+            height: '450px',
+            pb: 4,
+          }}
+        >
+          {presentTranslations.services.map((service, index) => (
+            <Grid key={index} xs={6} md={4}>
+              <Service name={service[lang]} icon={service.icon} />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
+  );
+};
+
+export default Services;
