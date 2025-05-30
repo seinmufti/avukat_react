@@ -5,13 +5,22 @@ import translations from '../translations';
 
 const Hero = () => {
   const presentTranslations = translations.sections.home.contents;
-    const { lang } = useLang();
+  const { lang } = useLang();
+
+  const handleClick = () => {
+    const element = document.getElementById(translations.sections.contact.id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <Box
+      id='home'
       sx={{
-        minHeight: '65vh',
-        marginTop: '64px', // Add this to account for fixed navbar
+        scrollMarginTop: '60px',
+        minHeight: '55vh',
+        marginTop: '64px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -45,7 +54,7 @@ const Hero = () => {
         <Typography level="body-lg" sx={{ mb: 3, maxWidth: 600, color: 'white' }}>
           {presentTranslations.motto[lang]}
         </Typography>
-        <Button size="lg" variant="solid" color="primary">
+        <Button size="lg" variant="solid" color="primary" onClick={handleClick}>
           {presentTranslations.scheduleButton[lang]}
         </Button>
       </Box>

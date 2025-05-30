@@ -8,6 +8,7 @@ import WorkIcon from '@mui/icons-material/Work';
 const translations = {
   sections: {
     home: {
+      id: "home",
       en: "Home",
       ar: "الرئيسية",
       kr: "سەرەکی",
@@ -35,6 +36,7 @@ const translations = {
       },
     },
     aboutUs: {
+      id: "about",
       en: "About Us",
       ar: "عنا",
       kr: "دەربارەی ئێمە",
@@ -47,6 +49,7 @@ const translations = {
       },
     },
     services: {
+      id: "services",
       en: "Practice Areas",
       ar: "مجالات الممارسة",
       kr: "بواری کار",
@@ -90,6 +93,7 @@ const translations = {
       ],
     },
     contact: {
+      id: "contact",
       en: "Contact",
       ar: "اتصل بنا",
       kr: "پەیوەندیمان پێوە بکە",

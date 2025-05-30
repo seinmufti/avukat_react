@@ -11,9 +11,10 @@ const Services = () => {
 
   return (
     <Box component="section"
+    id='services'
     sx={{
       px: 4,
-      py: 12,
+      py: 10,
       bgcolor: 'neutral.100',
       position: 'relative',
     }}>

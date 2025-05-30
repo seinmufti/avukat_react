@@ -5,8 +5,15 @@ import { useLang } from '../../LangContext';
 const NavbarItem = ( {section} ) => {
     const { lang } = useLang();
 
+    const handleClick = () => {
+    const element = document.getElementById(section.id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
     return (
-        <Button 
+        <Button
             variant="plain" 
             sx={{ 
                 color: 'white',
@@ -17,6 +24,7 @@ const NavbarItem = ( {section} ) => {
                 },
                 transition: 'color 0.2s ease-in-out'
             }}
+            onClick={handleClick}
         >
             {section[lang]}
         </Button>

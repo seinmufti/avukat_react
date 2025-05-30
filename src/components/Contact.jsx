@@ -9,9 +9,10 @@ const Contact = () => {
 
   return (
     <Box component="section" 
+    id='contact'
     sx={{
       px: 4,
-      py: 12,
+      py: 10,
       bgcolor: 'neutral.50',
       position: 'relative',
     }}>
