@@ -1,7 +1,10 @@
 import { Button } from '@mui/joy';
+import { useLang } from '../../LangContext';
 
 
-const NavbarItem = ( {item} ) => {
+const NavbarItem = ( {section} ) => {
+    const { lang } = useLang();
+
     return (
         <Button 
             variant="plain" 
@@ -15,7 +18,7 @@ const NavbarItem = ( {item} ) => {
                 transition: 'color 0.2s ease-in-out'
             }}
         >
-            {item}
+            {section[lang]}
         </Button>
     )
 }

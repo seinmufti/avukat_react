@@ -1,7 +1,8 @@
 import { Box, Typography } from '@mui/joy';
 
-const Service = ( {service} ) => {
-  const Icon = service.icon;
+
+const Service = ( {name, icon} ) => {
+  const Icon = icon;
 
   return (
     <Box
@@ -69,7 +70,7 @@ const Service = ( {service} ) => {
           letterSpacing: '0.5px',
         }}
       >
-        {service.name}
+        {name}
       </Typography>
     </Box>
   )

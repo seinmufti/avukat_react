@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { LangContext } from './LangContext';
+
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero'
 import AboutUs from './components/AboutUs'
@@ -8,15 +10,19 @@ import Footer from './components/Footer'
 
 
 function App() {
+  const [lang, setLang] = useState('en');
+
   return (
-    <>
-    <Navbar />
-    <Hero />
-    <AboutUs />
-    <Services />
-    <Contact />
-    <Footer />
-    </>
+    <LangContext.Provider value={{ lang, setLang }}>
+      <>
+        <Navbar />
+        <Hero />
+        <AboutUs />
+        <Services />
+        <Contact />
+        <Footer />
+      </>
+    </LangContext.Provider>
   )
 }
 

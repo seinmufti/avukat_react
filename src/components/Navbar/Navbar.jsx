@@ -8,7 +8,6 @@ import Languages from './languages/Languages';
 import { useMediaQuery } from '@mui/material';
 
 
-
 const Navbar = () => {
     const isMobile = useMediaQuery('(max-width:900px)');
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,17 +26,19 @@ const Navbar = () => {
                 boxShadow: 'md',
             }}
         >
-            <Box sx={{
-                maxWidth: 1200,
-                mx: 'auto',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                px: { xs: 2, md: 4 },
-                py: 2,
-                position: 'relative',
-            }}>
-                <Box sx={{ marginRight: 'auto' }}>
+            <Box
+                sx={{
+                    maxWidth: 1200,
+                    mx: 'auto',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    px: { xs: 2, md: 4 },
+                    py: 2,
+                    position: 'relative',
+                }}>
+                <Box
+                    sx={{ marginRight: 'auto' }}>
                     <img
                         src={logo}
                         alt="Logo"
@@ -49,7 +50,8 @@ const Navbar = () => {
                     />
                 </Box>
 
-                <Box sx={{
+                <Box 
+                sx={{
                     display: { xs: 'none', md: 'block' },
                     position: 'absolute',
                     left: '50%',
@@ -89,7 +91,7 @@ const Navbar = () => {
             >
                 <Box sx={{ py: 2 }}>
                     <NavbarItems orientation="vertical" />
-                    <Box sx={{ display: 'flex', justifyContent: 'center', flex: 1 , pt:3}}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', flex: 1, pt: 3 }}>
                         <Languages />
                     </Box>
                 </Box>

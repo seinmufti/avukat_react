@@ -1,9 +1,14 @@
 import { Box, Typography, Button } from '@mui/joy';
 import hero_cover from '../assets/hero_cover.jpg';
+import { useLang } from '../LangContext';
+import translations from '../translations';
 
 const Hero = () => {
+  const presentTranslations = translations.sections.home.contents;
+    const { lang } = useLang();
+
   return (
-     <Box
+    <Box
       sx={{
         minHeight: '65vh',
         marginTop: '64px', // Add this to account for fixed navbar
@@ -31,14 +36,17 @@ const Hero = () => {
       }}
     >
       <Box sx={{ position: 'relative', zIndex: 2 }}>
+        <Typography level="body-lg" sx={{ mb: 3, maxWidth: 600, color: 'white' }}>
+          {presentTranslations.title[lang]}
+        </Typography>
         <Typography level="h1" sx={{ mb: 2, color: 'white' }}>
-          Welcome to My Website
+          {presentTranslations.fullName[lang]}
         </Typography>
         <Typography level="body-lg" sx={{ mb: 3, maxWidth: 600, color: 'white' }}>
-          We build clean, fast, and modern web solutions tailored to your needs.
+          {presentTranslations.motto[lang]}
         </Typography>
         <Button size="lg" variant="solid" color="primary">
-          Get Started
+          {presentTranslations.scheduleButton[lang]}
         </Button>
       </Box>
     </Box>

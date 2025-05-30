@@ -1,26 +1,35 @@
 import { Box } from '@mui/joy';
 import Language from './Language';
-
-import flagEN from '../../../assets/flags/Flag_of_the_United_States.svg';
-import flagAR from '../../../assets/flags/Flag_of_Iraq.svg';
-import flagKR from '../../../assets/flags/Flag_of_Kurdistan.svg';
-
-const flags = [
-    flagEN,
-    flagAR,
-    flagKR,
-]
+import flagEn from '../../../assets/flags/Flag_of_the_United_States.svg';
+import flagAr from '../../../assets/flags/Flag_of_Iraq.svg';
+import flagKr from '../../../assets/flags/Flag_of_Kurdistan.svg';
 
 
 const Languages = () => {
+    const languages = [
+    {
+        flag: flagEn,
+        code: "en",
+    },
+    {
+        flag: flagAr,
+        code: "ar",
+    },
+    {
+        flag: flagKr,
+        code: "kr",
+    },
+]
+
     return (
-        <Box sx={{ 
+        <Box sx={{
             display: 'flex',
             gap: 2,
             alignItems: 'center'
         }}>
-            {flags.map(flag => (
-                <Language key={flag} flag={flag} />
+
+            {languages.map(language => (
+                <Language key={language.code} language={language} />
             ))}
         </Box>
     )

@@ -1,14 +1,22 @@
 import { Box, Button, Typography, Input, Textarea } from '@mui/joy';
+import translations from '../translations';
+import { useLang } from '../LangContext';
+
 
 const Contact = () => {
+  const presentTranslations = translations.sections.contact
+  const { lang } = useLang();
+
   return (
-    <Box component="section" sx={{
+    <Box component="section" 
+    sx={{
       px: 4,
       py: 12,
       bgcolor: 'neutral.50',
       position: 'relative',
     }}>
-      <Typography level="h2" sx={{
+      <Typography level="h2" 
+      sx={{
         textAlign: 'center',
         mb: 8,
         fontSize: { xs: '2rem', md: '2.5rem' },
@@ -25,9 +33,10 @@ const Contact = () => {
           bgcolor: 'primary.400',
         }
       }}>
-        Contact Us
+        {presentTranslations[lang]}
       </Typography>
       <Box
+        dir= {lang === "en" ? "ltr" : "rtl"}
         component="form"
         onSubmit={(e) => {
           e.preventDefault();
@@ -55,29 +64,29 @@ const Contact = () => {
           },
         }}
       >
-        <Input 
-          name="name" 
-          placeholder="Your Name" 
-          required 
+        <Input
+          name="name"
+          placeholder={presentTranslations.contents.name[lang]}
+          required
           size="lg"
         />
-        <Input 
-          type="email" 
-          name="email" 
-          placeholder="Your Email" 
-          required 
+        <Input
+          type="email"
+          name="email"
+          placeholder={presentTranslations.contents.email[lang]}
+          required
           size="lg"
         />
-        <Textarea 
-          name="message" 
-          placeholder="Your Message" 
-          minRows={4} 
-          required 
+        <Textarea
+          name="message"
+          placeholder={presentTranslations.contents.message[lang]}
+          minRows={4}
+          required
           size="lg"
         />
-        <Button 
-          type="submit" 
-          variant="solid" 
+        <Button
+          type="submit"
+          variant="solid"
           color="primary"
           size="lg"
           sx={{
@@ -89,7 +98,7 @@ const Contact = () => {
             }
           }}
         >
-          Send Message
+          {presentTranslations.contents.send[lang]}
         </Button>
       </Box>
     </Box>

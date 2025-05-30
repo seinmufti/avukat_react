@@ -1,6 +1,11 @@
 import { Box, Typography } from '@mui/joy';
+import translations from '../translations';
+import { useLang } from '../LangContext';
 
-const AboutUs = ( id ) => {
+const AboutUs = () => {
+  const presentTranslations = translations.sections.aboutUs
+  const { lang } = useLang();
+
   return (
     <Box
       component="section"
@@ -18,8 +23,9 @@ const AboutUs = ( id ) => {
           textAlign: 'center',
         }}
       >
-        <Typography 
-          level="h2" 
+        {/* Title */}
+        <Typography
+          level="h2"
           sx={{
             mb: 8,
             fontSize: { xs: '2rem', md: '2.5rem' },
@@ -37,20 +43,21 @@ const AboutUs = ( id ) => {
             }
           }}
         >
-          About Us
+          {presentTranslations[lang]}
         </Typography>
-        <Typography 
-          level="body-lg" 
-          sx={{ 
+
+        {/* Description */}
+        <Typography
+          level="body-lg"
+          sx={{
             color: 'neutral.700',
             lineHeight: 1.8,
-            maxWidth: '700px',
+            maxWidth: '900px',
             mx: 'auto',
+            minHeight: { xs: '190px', sm: '140px', md: '100px' },
           }}
         >
-          We are passionate about creating impactful digital experiences. Our team
-          combines creativity and technology to deliver innovative solutions that
-          help your business grow.
+          {presentTranslations.contents.description[lang]}
         </Typography>
       </Box>
     </Box>

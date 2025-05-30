@@ -1,9 +1,18 @@
 import { Box } from '@mui/joy';
+import { useLang } from '../../../LangContext';
 
-const Language = ({flag}) => {
+
+const Language = ({ language }) => {
+    const { setLang } = useLang();
+
+    const handleClick = () => {
+        setLang(language.code);
+    };
+
     return (
-        <Box 
-            sx={{ 
+        <Box
+            onClick={handleClick}   
+            sx={{
                 cursor: 'pointer',
                 '&:hover': {
                     opacity: 0.8
@@ -12,7 +21,7 @@ const Language = ({flag}) => {
             }}
         >
             <img
-                src={flag}
+                src={language.flag}
                 alt="flag"
                 style={{
                     height: '20px',
