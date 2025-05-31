@@ -44,7 +44,7 @@ const AboutUs = () => {
           level="h2"
           sx={{
             textAlign: 'center',
-            mb: { xs: 6, md: 10 },
+            mb: { xs: 10, md: 10 },
             fontSize: { xs: '2rem', md: '2.5rem' },
             fontWeight: 600,
             position: 'relative',
